@@ -10,12 +10,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * النشاط الأول: نموذج التسجيل.
- * يجمع بيانات المسافر ثم يرسلها إلى النشاط الثاني عبر Intent صريح.
+ * quest louwel l'activite main
+ * tekhou donnee ta3 el utilisateur toub3athehom lel activite 2
  */
 public class MainActivity extends AppCompatActivity {
 
-    // عناصر الواجهة
+    // les elements ta3 l'interface
     private EditText edtNomYh;
     private EditText edtNaissanceYh;
     private EditText edtDestinationYh;
@@ -27,30 +27,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // ربط العناصر بالواجهة
+        // ids mta3 les elements
         edtNomYh=findViewById(R.id.edt_nom_yh);
         edtNaissanceYh=findViewById(R.id.edt_naissance_yh);
         edtDestinationYh=findViewById(R.id.edt_destination_yh);
         rgMotifYh=findViewById(R.id.rg_motif_yh);
         btnInspecterYh = findViewById(R.id.btn_inspecter_yh);
 
-        // عند الضغط على زر "فحص الملف"
+        
         btnInspecterYh.setOnClickListener(v -> inspecterProfil());
     }
 
-    /** التحقق من البيانات المدخلة ثم الانتقال إلى النشاط الثاني */
+    /** verification ta3 les donnes ou ba3ed yetba3thou le activity 2*/
     private void inspecterProfil() {
         String nom=edtNomYh.getText().toString().trim();
         String txtNaissance=edtNaissanceYh.getText().toString().trim();
         String txtDestination=edtDestinationYh.getText().toString().trim();
 
-        // التحقق من الاسم
+        // verification mta3 el esm
         if (nom.isEmpty()) {
             edtNomYh.setError(getString(R.string.err_nom));
             return;
         }
 
-        // التحقق من السنوات (يجب أن تكون أرقاما صحيحة)
+        
         int naissance;
         int destination;
         try {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // التحقق من اختيار سبب السفر
+        // verification mta3 desti
         int idChoisi=rgMotifYh.getCheckedRadioButtonId();
         if (idChoisi==-1) {
             Toast.makeText(this, R.string.err_motif, Toast.LENGTH_SHORT).show();
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         RadioButton rbChoisi=findViewById(idChoisi);
         String motif=rbChoisi.getText().toString();
 
-        // إنشاء Intent صريح نحو النشاط الثاني وإرفاق البيانات بمفاتيح مبنية بالدوال الثابتة
+        // declary intent jdida ou b3athet m3aha les donnes
         Intent intent=new Intent(MainActivity.this, VerificationActivity.class);
         intent.putExtra(Cles.cleNom(Cles.MATRICULE), nom);
         intent.putExtra(Cles.cleAnneeNaissance(Cles.MATRICULE), naissance);
