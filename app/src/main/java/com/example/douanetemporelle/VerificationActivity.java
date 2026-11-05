@@ -30,19 +30,19 @@ public class VerificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verification);
 
         // ربط العناصر بالواجهة
-        tvNomYh = findViewById(R.id.tv_nom_yh);
-        tvAgeYh = findViewById(R.id.tv_age_yh);
-        tvMotifYh = findViewById(R.id.tv_motif_yh);
-        tvAlerteYh = findViewById(R.id.tv_alerte_yh);
-        btnApprouverYh = findViewById(R.id.btn_approuver_yh);
-        btnRefuserYh = findViewById(R.id.btn_refuser_yh);
+        tvNomYh=findViewById(R.id.tv_nom_yh);
+        tvAgeYh=findViewById(R.id.tv_age_yh);
+        tvMotifYh=findViewById(R.id.tv_motif_yh);
+        tvAlerteYh=findViewById(R.id.tv_alerte_yh);
+        btnApprouverYh=findViewById(R.id.btn_approuver_yh);
+        btnRefuserYh=findViewById(R.id.btn_refuser_yh);
 
         // استقبال البيانات المرسلة من النشاط الأول
-        Intent intent = getIntent();
-        nom = intent.getStringExtra(Cles.cleNom(Cles.MATRICULE));
-        int naissance = intent.getIntExtra(Cles.cleAnneeNaissance(Cles.MATRICULE), 0);
-        int destination = intent.getIntExtra(Cles.cleAnneeDestination(Cles.MATRICULE), 0);
-        String motif = intent.getStringExtra(Cles.cleMotif(Cles.MATRICULE));
+        Intent intent=getIntent();
+        nom =intent.getStringExtra(Cles.cleNom(Cles.MATRICULE));
+        int naissance= intent.getIntExtra(Cles.cleAnneeNaissance(Cles.MATRICULE), 0);
+        int destination=intent.getIntExtra(Cles.cleAnneeDestination(Cles.MATRICULE), 0);
+        String motif =intent.getStringExtra(Cles.cleMotif(Cles.MATRICULE));
 
         // حساب "العمر الزمني" = الفرق المطلق بين سنة الوجهة وسنة الميلاد
         int difference = Math.abs(destination - naissance);

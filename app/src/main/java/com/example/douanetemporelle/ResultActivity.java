@@ -19,14 +19,14 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        View racine = findViewById(R.id.root_resultat_yh);
-        TextView tvMessageYh = findViewById(R.id.tv_message_yh);
-        Button btnNouveauYh = findViewById(R.id.btn_nouveau_yh);
+        View racine=findViewById(R.id.root_resultat_yh);
+        TextView tvMessageYh=findViewById(R.id.tv_message_yh);
+        Button btnNouveauYh=findViewById(R.id.btn_nouveau_yh);
 
         // استقبال الحكم (قيمة منطقية) واسم المسافر
-        Intent intent = getIntent();
-        boolean approuve = intent.getBooleanExtra(Cles.cleVerdict(Cles.MATRICULE), false);
-        String nom = intent.getStringExtra(Cles.cleNom(Cles.MATRICULE));
+        Intent intent=getIntent();
+        boolean approuve=intent.getBooleanExtra(Cles.cleVerdict(Cles.MATRICULE), false);
+        String nom=intent.getStringExtra(Cles.cleNom(Cles.MATRICULE));
 
         // تغيير لون الخلفية والرسالة حسب الحكم
         if (approuve) {
@@ -39,7 +39,7 @@ public class ResultActivity extends AppCompatActivity {
 
         // زر "مسافر جديد": العودة إلى MainActivity وإغلاق كل الأنشطة السابقة
         btnNouveauYh.setOnClickListener(v -> {
-            Intent retour = new Intent(ResultActivity.this, MainActivity.class);
+            Intent retour=new Intent(ResultActivity.this, MainActivity.class);
             retour.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(retour);
             finish();

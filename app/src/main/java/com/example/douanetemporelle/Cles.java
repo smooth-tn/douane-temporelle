@@ -3,7 +3,7 @@ package com.example.douanetemporelle;
 public final class Cles {
 
     // آخر 4 أرقام من بطاقة الطالب لأحد أعضاء المجموعة (غيّرها برقمك الحقيقي)
-    public static final String MATRICULE = "1234";
+    public static final String MATRICULE= "1234";
 
     // منع إنشاء كائنات من هذه الفئة
     private Cles() {
