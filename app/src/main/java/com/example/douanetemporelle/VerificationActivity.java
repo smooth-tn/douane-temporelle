@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * النشاط الثاني: ماسح المفارقة الزمنية.
- * يعرض ملخص المسافر على شكل جواز سفر، ويسمح بالموافقة أو الرفض.
+ * act 2 confirmation ta3 el voyage
+ * 
  */
 public class VerificationActivity extends AppCompatActivity {
 
@@ -21,7 +21,7 @@ public class VerificationActivity extends AppCompatActivity {
     private Button btnApprouverYh;
     private Button btnRefuserYh;
 
-    // اسم المسافر (نحتفظ به لإرساله إلى النشاط الثالث)
+    // ism el mousefer
     private String nom;
 
     @Override
@@ -29,7 +29,7 @@ public class VerificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
 
-        // ربط العناصر بالواجهة
+        
         tvNomYh=findViewById(R.id.tv_nom_yh);
         tvAgeYh=findViewById(R.id.tv_age_yh);
         tvMotifYh=findViewById(R.id.tv_motif_yh);
@@ -37,35 +37,35 @@ public class VerificationActivity extends AppCompatActivity {
         btnApprouverYh=findViewById(R.id.btn_approuver_yh);
         btnRefuserYh=findViewById(R.id.btn_refuser_yh);
 
-        // استقبال البيانات المرسلة من النشاط الأول
+        // houni nekhou les donnes elly jew mel act 1
         Intent intent=getIntent();
         nom =intent.getStringExtra(Cles.cleNom(Cles.MATRICULE));
         int naissance= intent.getIntExtra(Cles.cleAnneeNaissance(Cles.MATRICULE), 0);
         int destination=intent.getIntExtra(Cles.cleAnneeDestination(Cles.MATRICULE), 0);
         String motif =intent.getStringExtra(Cles.cleMotif(Cles.MATRICULE));
 
-        // حساب "العمر الزمني" = الفرق المطلق بين سنة الوجهة وسنة الميلاد
+        
         int difference = Math.abs(destination - naissance);
 
-        // عرض الملخص
+        // output ta3 resultat
         tvNomYh.setText(getString(R.string.fmt_nom, nom));
         tvAgeYh.setText(getString(R.string.fmt_age, difference));
         tvMotifYh.setText(getString(R.string.fmt_motif, motif));
 
-        // الشرط: سبب السفر "تعديل الماضي" + الفرق عدد أولي => تعطيل زر الموافقة فور تحميل النشاط
+        // modification ta3 wa9et el voyage
         boolean modificationPasse = getString(R.string.motif_modification).equals(motif);
         if (modificationPasse && estPremier(difference)) {
             btnApprouverYh.setEnabled(false);
             tvAlerteYh.setVisibility(View.VISIBLE);
         }
 
-        // زر الموافقة => الحكم = true
+        // true ya3ni accepta
         btnApprouverYh.setOnClickListener(v -> lancerVerdict(true));
-        // زر الرفض => الحكم = false
+        // false => refuser
         btnRefuserYh.setOnClickListener(v -> lancerVerdict(false));
     }
 
-    /** الانتقال إلى النشاط الثالث مع الحكم (منطقي) واسم المسافر */
+    /** intent jedida besh nemshiw lel act 3*/
     private void lancerVerdict(boolean approuve) {
         Intent intent = new Intent(VerificationActivity.this, ResultActivity.class);
         intent.putExtra(Cles.cleVerdict(Cles.MATRICULE), approuve);
@@ -73,7 +73,7 @@ public class VerificationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /** دالة اختبار العدد الأولي: العدد الأولي هو عدد أكبر من 1 لا يقبل القسمة إلا على 1 ونفسه */
+    /** func besh na3refou el nbr premier wala lee */
     private boolean estPremier(int n) {
         if (n < 2) {
             return false;

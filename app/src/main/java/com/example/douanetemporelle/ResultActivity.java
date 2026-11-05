@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 /**
- * النشاط الثالث: الحكم النهائي.
- * الخلفية خضراء عند الموافقة وحمراء عند الرفض.
+ * activity 3 :resulat
+ * background khadhera ken te9bel ou 7amra ken te9belsh.
  */
 public class ResultActivity extends AppCompatActivity {
 
@@ -23,12 +23,12 @@ public class ResultActivity extends AppCompatActivity {
         TextView tvMessageYh=findViewById(R.id.tv_message_yh);
         Button btnNouveauYh=findViewById(R.id.btn_nouveau_yh);
 
-        // استقبال الحكم (قيمة منطقية) واسم المسافر
+        // tekhou le resultat be intent
         Intent intent=getIntent();
         boolean approuve=intent.getBooleanExtra(Cles.cleVerdict(Cles.MATRICULE), false);
         String nom=intent.getStringExtra(Cles.cleNom(Cles.MATRICULE));
 
-        // تغيير لون الخلفية والرسالة حسب الحكم
+        // houni win tetbadel el background 7amra wala khadhra
         if (approuve) {
             racine.setBackgroundColor(ContextCompat.getColor(this, R.color.vert_approuve));
             tvMessageYh.setText(getString(R.string.msg_approuve, nom));
@@ -37,7 +37,7 @@ public class ResultActivity extends AppCompatActivity {
             tvMessageYh.setText(getString(R.string.msg_refuse, nom));
         }
 
-        // زر "مسافر جديد": العودة إلى MainActivity وإغلاق كل الأنشطة السابقة
+        // tokhrej mel interface hethy ou tarja3 lel loula
         btnNouveauYh.setOnClickListener(v -> {
             Intent retour=new Intent(ResultActivity.this, MainActivity.class);
             retour.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
