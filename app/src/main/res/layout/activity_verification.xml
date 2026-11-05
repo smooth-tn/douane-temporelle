@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- النشاط الثاني: LinearLayout أفقي (الجذر) = صورة (وزن 0.3) + RelativeLayout (وزن 0.7) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/couverture"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:weightSum="1">
+
+    <!-- الجزء الأيسر: الصورة بوزن 0.3 -->
+    <ImageView
+        android:id="@+id/img_passeport_yh"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:background="@drawable/bg_image_passeport"
+        android:contentDescription="@string/titre_passeport"
+        android:padding="4dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_passport" />
+
+    <!-- الجزء الأيمن: RelativeLayout بوزن 0.7 للنصوص -->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_weight="0.7"
+        android:background="@drawable/bg_billet"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_titre_passeport_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="@string/titre_passeport"
+            android:textColor="@color/couverture"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_nom_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titre_passeport_yh"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/encre"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_age_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nom_yh"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/encre"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_motif_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_age_yh"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/encre"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_alerte_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_motif_yh"
+            android:layout_marginTop="14dp"
+            android:text="@string/alerte_paradoxe"
+            android:textColor="@color/rouge_refuse"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_refuser_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/btn_refuser" />
+
+        <Button
+            android:id="@+id/btn_approuver_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_refuser_yh"
+            android:text="@string/btn_approuver" />
+    </RelativeLayout>
+</LinearLayout>

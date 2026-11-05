@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Douane Temporelle</string>
+
+    <!-- Activité 1 -->
+    <string name="titre_formulaire">Poste de douane temporelle</string>
+    <string name="hint_nom">Nom du voyageur</string>
+    <string name="hint_naissance">Année de naissance (ex : 1990)</string>
+    <string name="hint_destination">Année de destination (ex : 2050)</string>
+    <string name="label_motif">Motif du voyage</string>
+    <string name="motif_tourisme">Tourisme</string>
+    <string name="motif_modification">Modification du passé</string>
+    <string name="motif_fuite">Fuite</string>
+    <string name="btn_inspecter">Inspecter le profil</string>
+    <string name="err_nom">Le nom est obligatoire</string>
+    <string name="err_annee">Veuillez saisir une année valide</string>
+    <string name="err_motif">Veuillez choisir un motif de voyage</string>
+
+    <!-- Activité 2 -->
+    <string name="titre_passeport">PASSEPORT TEMPOREL</string>
+    <string name="fmt_nom">Nom : %1$s</string>
+    <string name="fmt_age">Âge temporel : %1$d ans</string>
+    <string name="fmt_motif">Motif : %1$s</string>
+    <string name="alerte_paradoxe">⚠ Risque de paradoxe détecté : saut interdit</string>
+    <string name="btn_approuver">Approuver le saut temporel</string>
+    <string name="btn_refuser">Refuser (Risque de paradoxe)</string>
+
+    <!-- Activité 3 -->
+    <string name="msg_approuve">Bon voyage %1$s</string>
+    <string name="msg_refuse">%1$s est en état d\'arrestation temporelle</string>
+    <string name="btn_nouveau">Nouveau voyageur</string>
+</resources>

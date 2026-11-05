@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="papier">#F5E9C8</color>
+    <color name="encre">#3B2A14</color>
+    <color name="bordure">#8B5E34</color>
+    <color name="couverture">#1F3A5F</color>
+    <color name="or">#D4AF37</color>
+    <color name="vert_approuve">#2E7D32</color>
+    <color name="rouge_refuse">#C62828</color>
+    <color name="blanc">#FFFFFF</color>
+</resources>

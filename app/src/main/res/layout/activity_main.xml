@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- واجهة النشاط الأول: نموذج التسجيل -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tv_titre_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="@string/titre_formulaire"
+            android:textColor="@color/couverture"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edt_nom_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_nom"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edt_naissance_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_naissance"
+            android:inputType="number"
+            android:maxLength="4" />
+
+        <EditText
+            android:id="@+id/edt_destination_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_destination"
+            android:inputType="number"
+            android:maxLength="4" />
+
+        <TextView
+            android:id="@+id/tv_label_motif_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_motif"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_motif_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_tourisme_yh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/motif_tourisme" />
+
+            <RadioButton
+                android:id="@+id/rb_modification_yh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/motif_modification" />
+
+            <RadioButton
+                android:id="@+id/rb_fuite_yh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/motif_fuite" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_inspecter_yh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/btn_inspecter" />
+    </LinearLayout>
+</ScrollView>

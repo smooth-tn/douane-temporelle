@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- خلفية على شكل تذكرة / جواز -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/papier" />
+    <stroke
+        android:width="3dp"
+        android:color="@color/bordure"
+        android:dashWidth="10dp"
+        android:dashGap="5dp" />
+    <corners android:radius="12dp" />
+</shape>
